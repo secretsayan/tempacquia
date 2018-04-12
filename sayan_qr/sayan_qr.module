@@ -1,0 +1,35 @@
+<?php
+
+/**
+ * @file
+ * Contains sayan_qr.module.
+ */
+
+use Drupal\Core\Routing\RouteMatchInterface;
+
+/**
+ * Implements hook_help().
+ */
+function sayan_qr_help($route_name, RouteMatchInterface $route_match) {
+  switch ($route_name) {
+    // Main module help for the sayan_qr module.
+    case 'help.page.sayan_qr':
+      $output = '';
+      $output .= '<h3>' . t('About') . '</h3>';
+      $output .= '<p>' . t('Module for Products and QR code') . '</p>';
+      return $output;
+
+    default:
+  }
+}
+
+/**
+ * Implements hook_theme().
+ */
+function sayan_qr_theme() {
+  return [
+    'sayan_qr' => [
+      'render element' => 'children',
+    ],
+  ];
+}
