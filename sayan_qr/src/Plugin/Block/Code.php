@@ -24,7 +24,7 @@ class Code extends BlockBase {
 
     global $base_url;
     $node = \Drupal::routeMatch()->getParameter('node');
-    if ($node instanceof \Drupal\node\NodeInterface) {
+    if ($node instanceof \Drupal\node\NodeInterface && $node->getType() == 'products') {
       // You can get nid and anything else you need from the node object.
       //if($node->type == "products"){
       $nid = $node->id();
@@ -35,10 +35,15 @@ class Code extends BlockBase {
       $output_path = \Drupal::service('file_system')->realpath(file_default_scheme() . "://")."/qrcode$nid.png";
       \PHPQRCode\QRcode::png($txt, $output_path, 'L', 4, 2);
 
+      $build['#markup'] = "<img src=".$base_url."/sites/default/files/qrcode$nid.png/>";
+      $build['#cache']['max-age'] = 0;
 
     }
-    $build['#markup'] = "<img src=".$base_url."/sites/default/files/qrcode$nid.png/>";
-    $build['#cache']['max-age'] = 0;
+    else{
+
+     $build['#markup'] = $this->t("No QRCODES Here");
+    }
+
     return $build;
   }
 
