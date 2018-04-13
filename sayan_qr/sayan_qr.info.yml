@@ -5,7 +5,8 @@ core: 8.x
 package: Custom
 dependencies:
     - content_moderation
-    - datetime
+	- panelizer
+	- datetime
     - image
     - link
     - path
