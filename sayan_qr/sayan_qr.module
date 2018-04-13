@@ -37,7 +37,7 @@ function sayan_qr_theme() {
   'template' => 'page--products',
   'base hook' => 'page'
       ],
-      ];
+    ];
 }
 function sayan_qr_theme_suggestions_page_alter(array &$suggestions, array $variables, $hook) {
 
