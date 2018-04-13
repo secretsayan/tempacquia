@@ -53,8 +53,8 @@ function sayan_qr_preprocess_page(&$variables) {
   
   $node = Drupal::request()->attributes->get('node');
   if ($node && $node->getType() == 'products') {
-  	$my_block = \Drupal\block\Entity\Block::load('qrcode');
-  	$my_block_view = \Drupal::entityTypeManager()
+  $my_block = \Drupal\block\Entity\Block::load('qrcode');
+  $my_block_view = \Drupal::entityTypeManager()
     ->getViewBuilder('block')
     ->view($my_block);
   if ($my_block_view) {

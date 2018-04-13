@@ -1,35 +1,38 @@
-# core.entity_view_display.node.products.default.yml
 langcode: en
 status: true
 dependencies:
   config:
-    - core.entity_view_mode.node.teaser
     - field.field.node.products.body
     - field.field.node.products.field_app_purchase_link
     - field.field.node.products.field_product_image
-    - field.field.node.products.field_product_title
     - node.type.products
   module:
     - image
     - link
+    - panelizer
     - text
     - user
-id: node.products.teaser
+third_party_settings:
+  panelizer:
+    enable: false
+    custom: false
+    allow: false
+    default: default
+id: node.products.default
 targetEntityType: node
 bundle: products
-mode: teaser
+mode: default
 content:
   body:
-    label: above
-    type: text_summary_or_trimmed
-    weight: 1
-    settings:
-      trim_length: 600
-    third_party_settings: {  }
+    type: text_default
+    weight: 0
     region: content
+    label: above
+    settings: {  }
+    third_party_settings: {  }
   field_app_purchase_link:
     type: link
-    weight: 3
+    weight: 2
     region: content
     label: above
     settings:
@@ -41,19 +44,12 @@ content:
     third_party_settings: {  }
   field_product_image:
     type: image
-    weight: 2
+    weight: 1
     region: content
     label: above
     settings:
       image_style: ''
       image_link: ''
-    third_party_settings: {  }
-  field_product_title:
-    type: text_default
-    weight: 0
-    region: content
-    label: above
-    settings: {  }
     third_party_settings: {  }
 hidden:
   links: true

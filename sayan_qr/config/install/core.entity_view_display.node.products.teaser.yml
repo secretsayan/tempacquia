@@ -1,4 +1,3 @@
-# core.entity_view_display.node.products.teaser.yml
 langcode: en
 status: true
 dependencies:
@@ -7,13 +6,19 @@ dependencies:
     - field.field.node.products.body
     - field.field.node.products.field_app_purchase_link
     - field.field.node.products.field_product_image
-    - field.field.node.products.field_product_title
     - node.type.products
   module:
     - image
     - link
+    - panelizer
     - text
     - user
+third_party_settings:
+  panelizer:
+    enable: false
+    custom: false
+    allow: false
+    default: default
 id: node.products.teaser
 targetEntityType: node
 bundle: products
@@ -47,13 +52,6 @@ content:
     settings:
       image_style: ''
       image_link: ''
-    third_party_settings: {  }
-  field_product_title:
-    type: text_default
-    weight: 0
-    region: content
-    label: above
-    settings: {  }
     third_party_settings: {  }
 hidden:
   links: true

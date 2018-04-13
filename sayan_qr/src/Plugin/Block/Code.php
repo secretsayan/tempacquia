@@ -37,9 +37,9 @@ class Code extends BlockBase {
 
 
     }
-    return array(
-        '#markup' => "Hello<img src=".$base_url."/sites/default/files/qrcode$nid.png/>",
-    );
+    $build['#markup'] = "<img src=".$base_url."/sites/default/files/qrcode$nid.png/>";
+    $build['#cache']['max-age'] = 0;
+    return $build;
   }
 
 }
