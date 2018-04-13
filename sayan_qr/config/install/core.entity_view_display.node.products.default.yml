@@ -9,15 +9,8 @@ dependencies:
   module:
     - image
     - link
-    - panelizer
     - text
     - user
-third_party_settings:
-  panelizer:
-    enable: false
-    custom: false
-    allow: false
-    default: default
 id: node.products.default
 targetEntityType: node
 bundle: products
@@ -25,7 +18,7 @@ mode: default
 content:
   body:
     type: text_default
-    weight: 0
+    weight: 1
     region: content
     label: above
     settings: {  }
@@ -44,7 +37,7 @@ content:
     third_party_settings: {  }
   field_product_image:
     type: image
-    weight: 1
+    weight: 0
     region: content
     label: above
     settings:
@@ -53,4 +46,3 @@ content:
     third_party_settings: {  }
 hidden:
   links: true
-  scheduled_publication: true

@@ -2,13 +2,13 @@ langcode: en
 status: true
 dependencies:
   config:
-    - entity_browser.browser.image_browser
     - field.field.node.products.body
     - field.field.node.products.field_app_purchase_link
     - field.field.node.products.field_product_image
+    - image.style.thumbnail
     - node.type.products
   module:
-    - entity_browser
+    - image
     - link
     - text
 id: node.products.default
@@ -17,44 +17,35 @@ bundle: products
 mode: default
 content:
   body:
-    label: hidden
     type: text_textarea_with_summary
-    weight: 2
+    weight: 1
+    region: content
     settings:
       rows: 9
       summary_rows: 3
       placeholder: ''
     third_party_settings: {  }
-    region: content
   field_app_purchase_link:
     type: link_default
-    weight: 4
+    weight: 2
     region: content
     settings:
       placeholder_url: ''
       placeholder_title: ''
     third_party_settings: {  }
   field_product_image:
-    type: entity_browser_file
-    weight: 1
+    type: image_image
+    weight: 3
+    region: content
     settings:
-      entity_browser: image_browser
-      field_widget_edit: true
-      field_widget_remove: true
-      view_mode: default
+      progress_indicator: throbber
       preview_image_style: thumbnail
-      open: true
-      selection_mode: selection_append
-    region: content
     third_party_settings: {  }
-  links:
-    weight: 100
-    region: content
   status:
     type: boolean_checkbox
     settings:
       display_label: true
-    weight: 3
+    weight: 4
     region: content
     third_party_settings: {  }
   title:
@@ -70,6 +61,5 @@ hidden:
   moderation_state: true
   path: true
   promote: true
-  scheduled_publication: true
   sticky: true
   uid: true

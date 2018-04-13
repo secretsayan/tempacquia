@@ -1,3 +1,4 @@
+uuid: 880cea04-66f4-4e80-9d30-92fb3c0818cf
 langcode: en
 status: true
 dependencies:
@@ -10,31 +11,23 @@ dependencies:
   module:
     - image
     - link
-    - panelizer
     - text
     - user
-third_party_settings:
-  panelizer:
-    enable: false
-    custom: false
-    allow: false
-    default: default
 id: node.products.teaser
 targetEntityType: node
 bundle: products
 mode: teaser
 content:
   body:
-    label: above
-    type: text_summary_or_trimmed
+    type: text_default
     weight: 1
-    settings:
-      trim_length: 600
-    third_party_settings: {  }
     region: content
+    label: above
+    settings: {  }
+    third_party_settings: {  }
   field_app_purchase_link:
     type: link
-    weight: 3
+    weight: 2
     region: content
     label: above
     settings:
@@ -46,7 +39,7 @@ content:
     third_party_settings: {  }
   field_product_image:
     type: image
-    weight: 2
+    weight: 0
     region: content
     label: above
     settings:
@@ -55,4 +48,3 @@ content:
     third_party_settings: {  }
 hidden:
   links: true
-  scheduled_publication: true

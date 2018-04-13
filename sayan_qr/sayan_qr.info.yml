@@ -4,7 +4,6 @@ description: Module for Products and QR code
 core: 8.x
 package: Custom
 dependencies:
-    - content_moderation
     - datetime
     - image
     - link
